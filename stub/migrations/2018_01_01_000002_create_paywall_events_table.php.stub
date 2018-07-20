@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePaywallEventsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('paywall_events', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('causer_type');
+            $table->integer('causer_id')->unsigned();
+            $table->string('subject_type');
+            $table->integer('subject_id')->unsigned();
+            $table->timestamps();
+            $table->index(['causer_type', 'causer_id']);
+            $table->index(['subject_type', 'subject_id']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('paywall_events');
+    }
+}

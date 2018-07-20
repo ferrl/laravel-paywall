@@ -1,0 +1,31 @@
+{
+    "name": "ferrl/laravel-paywall",
+    "description": "Enables content paywall in your laravel project.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Ferreira",
+            "email": "me@ferrl.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ferrl\\Paywall\\": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.12"
+    },
+    "scripts": {
+        "smells": "vendor/bin/php-cs-fixer fix --diff"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ferrl\\Paywall\\Providers\\PaywallServiceProvider"
+            ]
+        }
+    }
+}

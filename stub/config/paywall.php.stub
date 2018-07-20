@@ -1,0 +1,40 @@
+<?php
+
+return [
+    /**
+     * Prefix for package tables.
+     */
+    'table_prefix' => 'paywall_',
+
+    /**
+     * Which authorizer should be used by default.
+     */
+    'default_authorizer' => \Ferrl\Paywall\Support\Authorizers\AuthenticatedUser::class,
+
+    /**
+     * Which rule should be used by default.
+     */
+    'default_rule' => \Ferrl\Paywall\Support\Rules\MaxEventsInDateRange::class,
+
+    /**
+     * Specific configuration for each rule.
+     */
+    'rules' => [
+
+        /**
+         * Configuration for MaxEventsInDateRange rule.
+         * Available configuration:
+         *  - max_events: the max number of events;
+         *  - time_range: possible values are:
+         *    - today: from the beginning of day until now;
+         *    - {1, 2, ..., n}: any integer, the value being the number of days.
+         *  - ignore_self: should not count events of the same subject.
+         */
+        'max_events_in_date_range' => [
+            'max_events' => 3,
+            'time_range' => 'today',
+            'ignore_self' => true,
+        ],
+
+    ],
+];
