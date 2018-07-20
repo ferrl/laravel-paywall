@@ -6,6 +6,6 @@ $finder = PhpCsFixer\Finder::create()
 return PhpCsFixer\Config::create()
     ->setRules([
         '@Symfony' => true,
-        'full_opening_tag' => false,
+        'phpdoc_var_without_name' => false,
     ])
     ->setFinder($finder);
