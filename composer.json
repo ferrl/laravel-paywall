@@ -22,6 +22,9 @@
     "scripts": {
         "smells": "vendor/bin/php-cs-fixer fix --diff"
     },
+    "scripts-descriptions": {
+        "smells": "Runs php-cs-fixer fix command."
+    },
     "extra": {
         "laravel": {
             "providers": [
