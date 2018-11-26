@@ -18,7 +18,7 @@ Must implement the `allows` method. Normally it will verify the events between `
 
 ## Default usage
 
-```
+```php
 @paywall
   This content is blocked after reading 3 different contents.
 @else
